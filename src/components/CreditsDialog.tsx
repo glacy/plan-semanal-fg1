@@ -62,12 +62,6 @@ const creditsData = [
         url: 'https://motion.dev',
         description: 'Biblioteca de animaciones',
       },
-      {
-        name: 'next-themes',
-        license: 'MIT',
-        url: 'https://github.com/pacocoursey/next-themes',
-        description: 'Gestión de temas',
-      },
     ],
   },
   {

@@ -4,6 +4,7 @@ import { Sidebar } from './components/Sidebar';
 import { WeekContent } from './components/WeekContent';
 import { CreditsDialog } from './components/CreditsDialog';
 import { weeksData } from './data/weeks';
+import { Analytics } from '@vercel/analytics/react';
 
 const MAX_CURRENT_WEEK: number = 6;
 
@@ -61,6 +62,7 @@ const App: React.FC = () => {
         </div>
 
       </footer>
+      <Analytics />
     </div>
   );
 };
