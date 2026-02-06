@@ -1,7 +1,7 @@
 
-# Curso planeamiento semanal
+# Planeamiento semanal 
 
-This is a code bundle for Curso planeamiento semanal. The original project is available at https://www.figma.com/design/vh6UFYUElsyJG3cGb7S3QJ/Curso-planeamiento-semanal.
+
 
 ## Setup Local Development
 
