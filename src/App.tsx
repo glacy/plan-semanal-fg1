@@ -30,8 +30,8 @@ const App: React.FC = () => {
         onToggleTheme={toggleTheme}
       />
 
-      <main className="pt-6 px-6 pb-12 flex flex-col lg:flex-row gap-8 max-w-[1400px] mx-auto">
-        <div className="lg:w-72 lg:sticky lg:top-0 lg:self-start">
+      <main className="pt-8 px-6 pb-12 flex flex-col lg:flex-row gap-8 max-w-[1400px] mx-auto">
+        <div className="lg:w-72 lg:sticky lg:top-24 lg:self-start z-40">
           <Sidebar
             currentWeek={currentWeekId}
             onSelectWeek={setCurrentWeekId}

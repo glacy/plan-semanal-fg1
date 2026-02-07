@@ -10,7 +10,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ weekNumber, courseName, isDarkMode, onToggleTheme }) => {
   return (
-    <header className={`h-16 flex items-center justify-between px-6 text-white shadow-lg transition-colors duration-300 ${isDarkMode ? 'bg-blue-700' : 'bg-blue-600'
+    <header className={`sticky top-0 z-50 h-16 flex items-center justify-between px-6 text-white shadow-lg transition-colors duration-300 ${isDarkMode ? 'bg-blue-700' : 'bg-blue-600'
       }`} role="banner">
       <div className="flex items-center gap-4">
         <div className="hidden sm:block" aria-hidden="true">
