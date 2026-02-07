@@ -1,147 +1,113 @@
+# Planeamiento Semanal - Física General I 🚀
 
-# Planeamiento semanal 
+## El Problema: Navegar la incertidumbre académica
+En un curso tan denso y desafiante como **Física General I**, los estudiantes a menudo se sienten abrumados. ¿Qué tema toca esta semana? ¿Ya cubrimos vectores? ¿Cuándo es el examen de cinemática?
 
+La estructura lineal de los sílabos tradicionales en PDF es estática y difícil de consultar sobre la marcha. Los estudiantes necesitan saber **dónde están, de dónde vienen y hacia dónde van**, sin perderse en documentos interminables.
 
+## La Solución: Una Línea de Tiempo Interactiva
+Esta herramienta transforma el cronograma del curso en una **experiencia visual e interactiva**. No es solo una lista de temas; es una brújula temporal que guía al estudiante a través de las 16 semanas del semestre.
 
-## Setup Local Development
+Imagina poder ver de un vistazo:
+- ✅ **Lo que ya lograste:** Semanas completadas marcadas en verde.
+- 📍 **Dónde estás hoy:** La semana actual destacada y activa.
+- 🔒 **Lo que viene:** Un vistazo a los bloques futuros, bloqueados para mantener el enfoque en el presente.
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+## 🌟 Características Clave
 
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
+### 1. Navegación Intuitiva por Sidebar
+El corazón de la aplicación es su **Sidebar inteligente**.
+- **Línea de tiempo conectada:** Una línea visual une todas las semanas, cambiando de color según el progreso.
+- **Estados claros:**
+    - **Completada:** Icono de check verde.
+    - **Activa:** Tu ubicación actual, resaltada claramente.
+    - **Bloqueada:** Semanas futuras deshabilitadas para evitar spoilers y ansiedad.
+- **Sticky & Scroll:** En escritorio, el menú se mantiene fijo mientras exploras el contenido, y su encabezado "Cronograma" siempre es visible.
 
-3. Open your browser and navigate to `http://localhost:3000`
+### 2. Contenido Rico y Focalizado
+Cada tarjeta de semana no es solo texto plano; es un dashboard de aprendizaje:
+- **Objetivos Claros:** Checklists de lo que el estudiante debe dominar.
+- **Recursos Visuales:** Imágenes de alta calidad (Unsplash) relacionadas con el tema físico (energía, movimiento, fuerzas).
+- **Feedback Inmediato:** Badges que te dicen si la semana está "Completada" o "En Progreso".
 
-## Build for Production
+### 3. Accesibilidad y Estética
+- **Modo Oscuro/Claro:** Soporte nativo y automático para descansar la vista en sesiones nocturnas de estudio.
+- **Diseño Responsivo:** Funciona perfecto en tu celular mientras vas en el bus o en tu laptop en la biblioteca.
+- **Tipografía y Color:** Uso cuidado de contrastes para garantizar la legibilidad.
 
-```bash
-npm run build
+---
+
+## 🚀 Cómo empezar (Para Usuarios)
+
+Si solo quieres ver el planeamiento, ¡es muy fácil! La aplicación está diseñada para ser accedida desde cualquier navegador moderno.
+
+Simplemente navega a través del Sidebar. Si eres un profesor o administrador, el control del "tiempo" (qué semana es hoy) se gestiona centralizadamente.
+
+---
+
+## 🛠️ Guía para Desarrolladores
+
+¿Quieres contribuir o adaptar esta herramienta para tu propio curso? ¡Bienvenido a bordo!
+
+### Tecnologías
+Este proyecto está construido sobre hombros de gigantes:
+- **React + Cote:** Para una interfaz reactiva y veloz.
+- **Tailwind CSS:** Para un estilizado rápido, moderno y mantenible.
+- **Lucide React:** Para iconos vectoriales hermosos y ligeros.
+- **Framer Motion:** Para esas transiciones suaves que le dan vida a la UI.
+
+### Estructura del Proyecto
+El código está organizado para ser intuitivo:
+
+```
+src/
+├── components/      # Piezas de LEGO (Sidebar, Header, Cards)
+│   ├── ui/          # Componentes base reutilizables (Botones, Dialogs)
+├── data/            # El cerebro del contenido (weeks.ts)
+├── App.tsx          # El orquestador principal
+└── index.css        # Estilos globales y temas
 ```
 
-The production build will be in the `build/` directory.
+### Setup Local
 
-## Navegación y Control de Semanas
+1.  **Clona el repositorio:**
+    Obtén tu copia local del código.
 
-El sistema implementa un control de navegación progresivo que permite gestionar qué semanas están disponibles para los estudiantes.
+2.  **Instala las dependencias:**
+    ```bash
+    npm install
+    ```
 
-### Configuración de la Semana Actual
+3.  **Corre el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+    Abre `http://localhost:5173` y verás la magia.
 
-En `src/App.tsx`, se define la constante `MAX_CURRENT_WEEK` que representa la semana real del calendario del curso:
+### Cómo controlar el "Tiempo" ⏳
+
+Para simular el avance del semestre, no necesitas una máquina del tiempo. Solo edita una constante en `src/App.tsx`:
 
 ```typescript
-const MAX_CURRENT_WEEK = 3;
+// src/App.tsx
+const MAX_CURRENT_WEEK: number = 4; // ¡Estamos en la semana 4!
 ```
 
-### Estados de las Semanas
+Al cambiar este número:
+- Las semanas 1-3 se marcarán como **Completadas** (Verdes).
+- La semana 4 será la **Activa** (Azul/Blanca).
+- Las semanas 5-16 estarán **Bloqueadas** (Gris).
 
-Las semanas del curso se clasifican en tres estados basados en `MAX_CURRENT_WEEK`:
+### Personalización del Contenido
+Toda la información del curso vive en `src/data/weeks.ts`. Ahí puedes editar:
+- Títulos de las semanas.
+- URLs de las imágenes.
+- Listas de objetivos.
 
-| Estado | Condición | Descripción | Visualización |
-|--------|-----------|-------------|---------------|
-| **Completada** | `week < MAX_CURRENT_WEEK` | Semanas ya finalizadas | Icono verde ✓ con check, tooltip "Completada" |
-| **En Progreso** | `week === MAX_CURRENT_WEEK` | Semana actual del curso | Icono azul con número, tooltip "En progreso", badge "Esta semana" |
-| **Bloqueada** | `week > MAX_CURRENT_WEEK` | Semanas futuras | Icono 🔒, opacidad reducida, no clickeable |
+¡Hazlo tuyo y ayuda a tus estudiantes a navegar mejor su aprendizaje!
 
-### Badge "Esta Semana"
+---
 
-Para mejorar la accesibilidad y claridad visual, la semana `MAX_CURRENT_WEEK` muestra siempre un badge distintivo con el texto "Esta semana" junto a un icono de reloj (Clock).
-
-**Características del Badge:**
-
-- **Solo visible cuando**: La semana es `MAX_CURRENT_WEEK` pero no está seleccionada actualmente por el usuario
-- **Icono**: Clock de lucide-react (refuerzo visual)
-- **Texto**: "Esta semana" (información explícita para lectores de pantalla)
-- **Posición**: Junto al número de semana en la línea de título
-
-**Accesibilidad (WCAG AA):**
-
-| Tema | Fondo | Texto/Borde | Contrast Ratio |
-|------|-------|-------------|---------------|
-| **Oscuro** | `bg-blue-500/15` | Texto `text-blue-400` con borde `border-blue-500/30` | AA ✓ |
-| **Claro** | `bg-blue-100` | Texto `text-blue-700` con borde `border-blue-200` | AA ✓ |
-
-**ARIA Atributos:**
-
-- `aria-current="week"` - Indica a lectores de pantalla que esta es la semana actual del curso
-- `aria-label="Semana actual del curso"` - Descripción explícita del badge
-
-**Beneficios de Accesibilidad:**
-
-✅ **No depende de color** - El texto e icono son visibles independientemente de la percepción del color
-
-✅ **Información textual** - Los lectores de pantalla leen "Esta semana" sin interpretaciones complejas
-
-✅ **Alto contraste** - Cumple con estándares WCAG AA en ambos temas
-
-✅ **Claridad cognitiva** - Texto explícito más fácil de procesar que códigos visuales abstractos
-
-### Lógica de Navegación
-
-El sistema maneja dos conceptos distintos:
-
-1. **`currentWeek`**: La semana que el usuario está visualizando actualmente (navegación libre entre semanas disponibles)
-2. **`MAX_CURRENT_WEEK`**: La semana más reciente disponible en el calendario del curso (control administrativo)
-
-### Restricciones
-
-- Los usuarios pueden navegar libremente entre todas las semanas anteriores o iguales a `MAX_CURRENT_WEEK`
-- Las semanas posteriores a `MAX_CURRENT_WEEK` están bloqueadas y no son clickeables
-- El botón "Siguiente Semana" está deshabilitado cuando el usuario está en `MAX_CURRENT_WEEK`
-
-### Badge Dinámico de Estado en el Contenido de Semana
-
-El contenido de cada semana (`WeekContent`) muestra un badge dinámico que refleja el estado real de la semana en relación con `MAX_CURRENT_WEEK`:
-
-| Estado | Texto del Badge | Color | Animación |
-|--------|-----------------|-------|-----------|
-| **Completada** | "Semana Completada" | Verde | Sin animación |
-| **En Progreso** | "Sesión Semanal Activa" | Azul | Punto animado (pulse) |
-| **Bloqueada** | "Semana Bloqueada" | Gris | Sin animación |
-
-El badge es consistente con el sistema de navegación del Sidebar y proporciona información contextual valiosa al usuario sobre el estado de la semana que está visualizando.
-
-### Diferenciación Visual de Semanas
-
-Es importante distinguir claramente entre la semana `MAX_CURRENT_WEEK` (habilitada) y las semanas bloqueadas:
-
-| Característica | MAX_CURRENT_WEEK (habilitada) | Semanas Bloqueadas |
-|----------------|--------------------------------|-------------------|
-| **Badge** | "Esta semana" ✓ con icono Clock | No tiene badge |
-| **Opacidad** | 100% (normal) | 40% (reducida) |
-| **Cursor** | Pointer (clickeable) | Not-allowed |
-| **Icono** | Número de semana | 🔒 |
-| **Tooltip** | "En progreso" | "Bloqueada" |
-| **Estado ARIA** | `aria-current="week"` | `aria-disabled="true"` |
-
-Esta distinción garantiza que los usuarios identifiquen fácilmente cuál es la semana actual del curso y qué semanas están bloqueadas.
-
-### Cómo Actualizar la Semana del Curso
-
-Para avanzar el curso a la siguiente semana, simplemente actualiza el valor de `MAX_CURRENT_WEEK` en `src/App.tsx`:
-
-```typescript
-const MAX_CURRENT_WEEK = 4; // Actualizar de 3 a 4
-```
-
-Este cambio automáticamente:
-- Desbloquea la semana 4
-- Marca la semana 3 como "Completada"
-- Establece la semana 4 como "En Progreso"
-- Bloquea todas las semanas mayores a 4
-
-## Project Structure
-
-- `src/` - Source code
-  - `components/` - React components
-  - `data/` - Data files (weeks.ts)
-  - `styles/` - Additional styles
-  - `main.tsx` - Entry point
-  - `App.tsx` - Main application component
-  - `index.css` - Global styles with Tailwind CSS
-
-  
+<p align="center">
+  Hecho con ❤️ para la Cátedra de Física General I - Tecnológico de Costa Rica
+</p>

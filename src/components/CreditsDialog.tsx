@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -99,9 +101,9 @@ export const CreditsDialog: React.FC<CreditsDialogProps> = ({ isDarkMode }) => {
     <Dialog>
       <DialogTrigger asChild>
         <button
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${isDarkMode
-              ? 'hover:bg-white/5 text-slate-400 hover:text-slate-200'
-              : 'hover:bg-gray-100 text-slate-500 hover:text-slate-700'
+          className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-small transition-colors ${isDarkMode
+            ? 'hover:bg-white/5 text-slate-400 hover:text-slate-200'
+            : 'hover:bg-gray-100 text-slate-500 hover:text-slate-700'
             }`}
           aria-label="Ver créditos y atribuciones"
         >
@@ -135,8 +137,8 @@ export const CreditsDialog: React.FC<CreditsDialogProps> = ({ isDarkMode }) => {
                   <div
                     key={item.name}
                     className={`p-4 rounded-lg border transition-colors ${isDarkMode
-                        ? 'bg-white/5 border-white/10 hover:bg-white/10'
-                        : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
+                      ? 'bg-white/5 border-white/10 hover:bg-white/10'
+                      : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
                       }`}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
@@ -178,6 +180,20 @@ export const CreditsDialog: React.FC<CreditsDialogProps> = ({ isDarkMode }) => {
             Los proyectos de código abierto mencionados anteriormente son propiedad de sus respectivos autores y se utilizan bajo sus licencias correspondientes.
           </p>
         </div>
+
+        <DialogFooter className="mt-6 sm:justify-end">
+          <DialogClose asChild>
+            <button
+              type="button"
+              className={`w-full sm:w-auto px-4 py-2 rounded-lg font-medium transition-colors ${isDarkMode
+                ? 'bg-white/10 hover:bg-white/20 text-white'
+                : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
+                }`}
+            >
+              Cerrar
+            </button>
+          </DialogClose>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
