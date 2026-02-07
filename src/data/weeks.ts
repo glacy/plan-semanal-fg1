@@ -19,7 +19,7 @@ export interface WeekData {
 
 export const weeksData: Record<number, WeekData> = {
     1: {
-        id: 1, title: "UNIDADES, CANTIDADES FÍSICAS Y VECTORES",
+        id: 1, title: "Unidades y cantidades físicas",
         image: "https://images.unsplash.com/photo-1559819614-8e87b90b8e9b?auto=format&fit=crop&q=80&w=1000",
         objetivos: [
             "Presentar el programa del curso.",
@@ -42,7 +42,7 @@ export const weeksData: Record<number, WeekData> = {
         ]
     },
     2: {
-        id: 2, title: "VECTORES Y SUMA DE VECTORES",
+        id: 2, title: "Vectores y operaciones vectoriales",
         image: "https://images.unsplash.com/photo-1516503424803-708327384b90?auto=format&fit=crop&q=80&w=1000",
         objetivos: [
             "Calcular las componentes cartesianas de un vector, dadas su magnitud y dirección.",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronLeft, Moon, Sun } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 
 interface HeaderProps {
   weekNumber: number;
