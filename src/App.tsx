@@ -6,7 +6,7 @@ import { CreditsDialog } from './components/CreditsDialog';
 import { weeksData } from './data/weeks';
 import { Analytics } from '@vercel/analytics/react';
 
-const MAX_CURRENT_WEEK: number = 6;
+const MAX_CURRENT_WEEK: number = 1;
 
 const App: React.FC = () => {
   const [currentWeekId, setCurrentWeekId] = useState(1);

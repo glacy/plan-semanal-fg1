@@ -59,7 +59,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
                 <Calendar className="w-4 h-4 text-blue-500" />
               </div>
               <div className="text-left overflow-hidden">
-                <p className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">Semana Actual</p>
+                {/* <p className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">Semana Actual</p> */}
                 <p className="text-sm font-bold truncate">{activeWeekData?.title}</p>
               </div>
             </div>
@@ -105,6 +105,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
                 const isPast = week < maxCurrentWeek;
                 const isInProgress = week === maxCurrentWeek;
                 const isLocked = week > maxCurrentWeek;
+                const nextWeekIsLocked = week + 1 > maxCurrentWeek;
                 const showCurrentBadge = isInProgress;
 
                 return (
@@ -116,34 +117,23 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
                     aria-current={isInProgress ? "true" : isActive ? "page" : undefined}
                     aria-disabled={isLocked}
                     className={`
-                      w-full flex items-stretch gap-3 p-3 rounded-lg text-left transition-all duration-200 group relative
-                      ${isInProgress
-                        ? (isDarkMode ? 'bg-slate-800 border border-blue-500/30 hover:bg-slate-700' : 'bg-white border border-blue-200 shadow-sm hover:bg-slate-50')
-                        : isActive
-                          ? (isDarkMode ? 'bg-blue-600/10 border border-blue-500/30' : 'bg-blue-500/10 border border-blue-200')
-                          : isLocked
-                            ? 'opacity-40 cursor-not-allowed border border-transparent'
-                            : isPast
-                              ? (isDarkMode ? 'bg-green-500/5 border border-green-500/20 hover:bg-green-500/10' : 'bg-green-50/50 border border-green-200/50 hover:bg-green-50')
-                              : 'hover:bg-black/5 border border-transparent'
+                      w-full flex items-stretch gap-3 p-3 rounded-lg text-left transition-all duration-200 group relative hover:z-50
+                      ${isLocked ? 'z-0' : 'z-10'}
+                      ${isActive || isInProgress
+                        ? (isDarkMode ? 'bg-blue-600/10 border border-blue-500/30 hover:bg-blue-600/20' : 'bg-blue-500/10 border border-blue-200 shadow-sm hover:bg-blue-50')
+                        : isLocked
+                          ? 'opacity-40 cursor-not-allowed border border-transparent'
+                          : isPast
+                            ? (isDarkMode ? 'bg-green-500/5 border border-green-500/20 hover:bg-green-500/10' : 'bg-green-50/50 border border-green-200/50 hover:bg-green-50')
+                            : 'hover:bg-black/5 border border-transparent'
                       }
                     `}
                   >
-                    {/* Indicador de línea de tiempo */}
-                    <div className="flex flex-col items-center relative flex-shrink-0" aria-hidden="true">
-                      {/* Tooltip (Desktop only) */}
-                      <div className={`
-                        hidden lg:block absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded text-[10px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none z-30 transform translate-y-1 group-hover:translate-y-0
-                        ${isDarkMode ? 'bg-slate-700 text-slate-100' : 'bg-slate-800 text-white'}
-                      `}>
-                        {isPast ? 'Completada' : isInProgress ? 'En progreso' : isLocked ? 'Bloqueada' : 'Próximamente'}
-                        <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 border-x-4 border-x-transparent border-t-4 ${isDarkMode ? 'border-t-slate-700' : 'border-t-slate-800'}`}></div>
-                      </div>
-
+                    <div className="flex flex-col items-center justify-center relative flex-shrink-0" aria-hidden="true">
                       {/* Línea Superior: Conecta con el item anterior (cubre padding 12px + gap 4px + overlap) */}
                       {week > 1 && (
                         <div className={`
-                          absolute -top-6 h-6 left-1/2 -translate-x-1/2 w-0.5
+                          absolute -top-4 bottom-1/2 mb-2.5 left-1/2 -translate-x-1/2 w-0.5 z-10 pointer-events-none
                           ${(isPast || isInProgress)
                             ? (isDarkMode ? 'bg-green-800' : 'bg-green-300')
                             : (isDarkMode ? 'bg-slate-800' : 'bg-gray-200')
@@ -154,8 +144,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
                       {/* Línea Inferior: Conecta con el siguiente item (cubre hasta overlap siguiente) */}
                       {week !== totalWeeks && (
                         <div className={`
-                          absolute top-5 -bottom-6 left-1/2 -translate-x-1/2 w-0.5
-                          ${isPast
+                          absolute top-1/2 mt-2.5 -bottom-3.5 left-1/2 -translate-x-1/2 w-0.5 z-10 pointer-events-none
+                          ${isPast || (isInProgress && !nextWeekIsLocked)
                             ? (isDarkMode ? 'bg-green-800' : 'bg-green-300')
                             : (isDarkMode ? 'bg-slate-800' : 'bg-gray-200')
                           }
@@ -163,6 +153,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
                       )}
 
                       <div className="relative z-20">
+                        {/* Tooltip (Desktop only) */}
+                        <div className={`
+                          hidden lg:block absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded text-[10px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none z-30 transform translate-y-1 group-hover:translate-y-0
+                          ${isDarkMode ? 'bg-slate-700 text-slate-100' : 'bg-slate-800 text-white'}
+                        `}>
+                          {isPast ? 'Completada' : isInProgress ? 'En progreso' : isLocked ? 'Bloqueada' : 'Próximamente'}
+                          <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 border-x-4 border-x-transparent border-t-4 ${isDarkMode ? 'border-t-slate-700' : 'border-t-slate-800'}`}></div>
+                        </div>
+
                         {isInProgress && (
                           <motion.div
                             className={`absolute inset-0 rounded-full ${isDarkMode ? 'bg-blue-500/20' : 'bg-blue-400/20'}`}
@@ -195,7 +194,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
 
                     <div className="flex-1 overflow-hidden">
                       <div className="flex items-center gap-2 mb-0.5">
-                        <p className={`text-[10px] font-bold uppercase tracking-wider ${isActive
+                        <p className={`text-[10px] font-bold uppercase tracking-wider ${isActive || isInProgress
                           ? 'text-blue-500'
                           : isPast
                             ? (isDarkMode ? 'text-green-500/80' : 'text-green-600/80')
@@ -216,7 +215,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
                           </div>
                         )}
                       </div>
-                      <p className={`text-xs font-semibold truncate ${isActive
+                      <p className={`text-xs font-semibold truncate ${isActive || isInProgress
                         ? (isDarkMode ? 'text-white' : 'text-blue-900')
                         : isLocked
                           ? (isDarkMode ? 'text-slate-600' : 'text-slate-500')
