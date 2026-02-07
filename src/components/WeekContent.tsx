@@ -194,7 +194,7 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
               }`}
           >
             <ChevronLeft className="w-4 h-4" aria-hidden="true" />
-            Semana Anterior
+            Semana anterior
           </button>
 
           <div
@@ -215,7 +215,7 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
               : 'text-blue-600 hover:text-blue-500'
               }`}
           >
-            Siguiente Semana
+            Siguiente semana
             <ChevronRight className="w-4 h-4" aria-hidden="true" />
           </button>
         </nav>

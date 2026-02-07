@@ -73,6 +73,10 @@ src/
 1.  **Clona el repositorio:**
     Obtén tu copia local del código.
 
+    ```bash
+    git clone https://github.com/glacy/plan-semanal-fg1.git
+    ```
+    
 2.  **Instala las dependencias:**
     ```bash
     npm install
@@ -82,7 +86,7 @@ src/
     ```bash
     npm run dev
     ```
-    Abre `http://localhost:5173` y verás la magia.
+    Abre `http://localhost:3000` y verás la magia.
 
 ### Cómo controlar el "Tiempo" ⏳
 

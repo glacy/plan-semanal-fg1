@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Github } from 'lucide-react';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { WeekContent } from './components/WeekContent';
@@ -57,7 +58,20 @@ const App: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <p>© 2026 Cátedra de Física General I - Tecnológico de Costa Rica</p>
         </div>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-2">
+          <a
+            href="https://github.com/glacy/plan-semanal-fg1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${isDarkMode
+              ? 'hover:bg-white/5 text-slate-400 hover:text-slate-200'
+              : 'hover:bg-gray-100 text-slate-500 hover:text-slate-700'
+              }`}
+            aria-label="Ver código fuente en GitHub"
+          >
+            <Github className="w-4 h-4" aria-hidden="true" />
+            <span>Repositorio</span>
+          </a>
           <CreditsDialog isDarkMode={isDarkMode} />
         </div>
 

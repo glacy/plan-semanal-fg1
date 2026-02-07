@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { weeksData } from '../data/weeks';
-import { Calendar, CheckCircle, ChevronDown, X, Lock, CalendarCheck } from 'lucide-react';
+import { Calendar, CheckCircle, ChevronDown, X, Lock, Pin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface SidebarProps {
@@ -208,7 +208,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
                           {showCurrentBadge && (
                             <div className={`flex items-center gap-1 px-2 py-0.5 rounded-full ${isDarkMode ? 'bg-blue-500/15 border border-blue-500/30' : 'bg-blue-100 border border-blue-200'
                               }`} aria-label="Semana actual del curso">
-                              <CalendarCheck className="w-2.5 h-2.5" aria-hidden="true" />
+                              <Pin className="w-2.5 h-2.5" aria-hidden="true" />
                               <span className={`text-[9px] font-bold uppercase tracking-wider ${isDarkMode ? 'text-blue-400' : 'text-blue-700'
                                 }`}>
                                 Activa
