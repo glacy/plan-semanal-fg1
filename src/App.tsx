@@ -32,7 +32,7 @@ const App: React.FC = () => {
       />
 
       <main className="pt-8 px-6 pb-12 flex flex-col lg:flex-row gap-8 max-w-[1400px] mx-auto">
-        <div className="lg:w-72 lg:sticky lg:top-24 lg:self-start z-40">
+        <div className="w-full lg:w-72 sticky top-16 lg:top-24 self-start z-40">
           <Sidebar
             currentWeek={currentWeekId}
             onSelectWeek={setCurrentWeekId}
