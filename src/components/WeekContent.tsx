@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, List, ClipboardCheck, FileCheck, ExternalLink, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Target, List, ClipboardCheck, PencilRuler, ExternalLink, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { WeekData } from '../data/weeks';
 import { Section } from './Section';
 import { motion } from 'motion/react';
@@ -129,14 +129,16 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
             </div>
           </Section>
 
-          <Section title="Actividades" icon={FileCheck} delay={0.4} isDarkMode={isDarkMode}>
+          <Section title="Actividades" icon={PencilRuler} delay={0.4} isDarkMode={isDarkMode}>
             <div className="grid gap-3">
               {week.evaluaciones.length > 0 ? (
                 week.evaluaciones.map((item, i) => (
                   <a
                     key={i}
                     href={item.url}
-                    aria-label={`Evaluación: ${item.text}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Actividad: ${item.text}`}
                     className={`flex items-center gap-3 p-4 rounded-xl transition-all border group ${isDarkMode
                       ? 'bg-white/5 border-white/5 hover:bg-white/10 text-orange-400'
                       : 'bg-gray-50 border-gray-100 hover:bg-orange-50/50 text-orange-700 shadow-sm'
@@ -166,16 +168,19 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
                 <a
                   key={i}
                   href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={`Recurso: ${item.text}`}
-                  className={`flex items-center gap-3 p-3 rounded-xl transition-all border ${isDarkMode
+                  className={`flex items-center gap-3 p-3 rounded-xl transition-all border group ${isDarkMode
                     ? 'bg-white/5 border-white/5 hover:bg-white/10 text-slate-300'
                     : 'bg-white border-gray-100 hover:border-blue-200 hover:bg-blue-50/30 text-slate-600'
                     }`}
                 >
                   <item.icon className={`w-5 h-5 ${isDarkMode ? 'text-blue-500' : 'text-blue-600'}`} aria-hidden="true" />
-                  <span className="text-sm font-medium">
+                  <span className="text-sm font-medium flex-1">
                     {item.text}
                   </span>
+                  <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                 </a>
               ))}
             </div>

@@ -37,7 +37,7 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Estudiar el resumen Semana 1.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-1%2Flectura_semana1.pdf", icon: FileText }
         ],
         evaluaciones: [
-            { text: "Actividad formativa 1", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=49568", icon: FileText },
+            // { text: "Actividad formativa 1", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=49568", icon: FileText },
             { text: "Práctica 1", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-1%2Fpractica_semana1.pdf", icon: Calculator }
         ]
     },
@@ -59,7 +59,7 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Estudiar el resumen Semana 2.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-2%2Flectura_semana2.pdf", icon: FileText }
         ],
         evaluaciones: [
-            { text: "Actividad formativa 2", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=49632", icon: FileText },
+            // { text: "Actividad formativa 2", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=49632", icon: FileText },
             { text: "Práctica 2", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-2%2Fpractica_semana2.pdf", icon: Calculator }
         ],
         recursos: [
@@ -86,9 +86,12 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Estudiar el resumen de Semana 3.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-3%2Flectura_semana3.pdf", icon: FileText }
         ],
         evaluaciones: [
-            { text: "Actividad formativa 3", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=49750", icon: FileText },
+            // { text: "Actividad formativa 3", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=49750", icon: FileText },
             { text: "Práctica 3", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-3%2Fpractica_semana3.pdf", icon: Calculator },
             { text: "Tarea 1", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/tareas-coordinacion%2Fi-2025%2F2025_IS_FG1_tarea1.pdf", icon: FileCheck }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 2", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-3%2Fsolucion_practica_semana2.pdf", icon: Calculator }
         ]
     },
     4: {
@@ -108,8 +111,11 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Estudiar el resumen de Semana 4.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-4%2Flectura_semana4.pdf", icon: FileText }
         ],
         evaluaciones: [
-            { text: "Actividad formativa 4", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=49895", icon: FileText },
+            // { text: "Actividad formativa 4", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=49895", icon: FileText },
             { text: "Práctica 4", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-4%2Fpractica_semana4.pdf", icon: Calculator }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 3", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-4%2Fsolucion_practica_semana3.pdf", icon: Calculator }
         ]
     },
     5: {
@@ -130,8 +136,12 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Estudiar el resumen de Semana 5.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-5%2Flectura_semana5.pdf", icon: FileText }
         ],
         evaluaciones: [
-            { text: "Actividad formativa 5", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=50050", icon: FileText },
+            // { text: "Actividad formativa 5", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=50050", icon: FileText },
             { text: "Práctica 5", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-5%2Fpractica_semana5.pdf", icon: Calculator }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 4", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-5%2FSOLUCION_practica_semana4.pdf", icon: Calculator },
+            { text: "Phet: Proyectiles", url: "https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_all.html?locale=es", icon: Link }
         ]
     },
     6: {
@@ -155,8 +165,12 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Estudiar el resumen de Semana 6.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-6%2Flectura_semana6.pdf", icon: FileText }
         ],
         evaluaciones: [
-            { text: "Actividad formativa 6", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=50178", icon: FileText },
+            // { text: "Actividad formativa 6", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=50178", icon: FileText },
             { text: "Práctica 6", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-6%2Fpractica_semana6.pdf", icon: Calculator }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 5", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-6%2Fsolucion_practica_semana5.pdf", icon: Calculator },
+            { text: "Phet: Leyes de Newton", url: "https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_all.html?locale=es", icon: Link }
         ]
     },
     7: {
@@ -179,8 +193,12 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Estudiar el resumen de Semana 7.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-7%2Flectura_semana7.pdf", icon: FileText }
         ],
         evaluaciones: [
-            { text: "Actividad formativa 6 (misma actividad formativa de Semana 6)", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=50178", icon: FileText },
+            // { text: "Actividad formativa 6 (misma actividad formativa de Semana 6)", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=50178", icon: FileText },
             { text: "Práctica 7", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-7%2Fpractica_semana7.pdf", icon: Calculator }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 6", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-7%2Fsolucion_practica_semana6.pdf", icon: Calculator },
+            { text: "Phet: Leyes de Newton", url: "https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_all.html?locale=es", icon: Link }
         ]
     },
     8: {
@@ -205,6 +223,9 @@ export const weeksData: Record<number, WeekData> = {
         ],
         evaluaciones: [
             { text: "Práctica 8", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-8%2Fpractica_semana8.pdf", icon: Calculator }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 7", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-8%2Fsolucion_practica_semana7.pdf", icon: Calculator }
         ]
     },
     9: {
@@ -228,8 +249,11 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Estudiar el resumen de Semana 9.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-9%2Flectura_semana9.pdf", icon: FileText }
         ],
         evaluaciones: [
-            { text: "Actividad formativa 7", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=50585", icon: FileText },
+            // { text: "Actividad formativa 7", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/tda-motor-juegos/gaap_evaluator?ASIG_ID=50585", icon: FileText },
             { text: "Práctica 9", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-9%2Fpractica_semana9.pdf", icon: Calculator }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 8", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-9%2Fsolucion_practica_semana8.pdf", icon: Calculator }
         ]
     },
     10: {
@@ -249,7 +273,12 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Revisar las secciones correspondientes del Capítulo 6 y Capítulo 7 del libro principal de consulta.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/libro%2FCapitulo_06.pdf", icon: BookOpen },
             { text: "Estudiar el resumen de Semana 10.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-10%2Flectura_semana10.pdf", icon: FileText }
         ],
-        evaluaciones: []
+        evaluaciones: [
+            { text: "Práctica 10", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-10%2FEjercicios_resueltos_capi%CC%81tulo_7.pdf", icon: Calculator },
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 9", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-10%2Fsolucion_practica_semana9.pdf", icon: Calculator }
+        ]
     },
     11: {
         id: 11, title: "Cantidad de movimiento, impulso y colisiones",
@@ -271,7 +300,12 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Revisar las secciones correspondientes del Capítulo 8 del libro principal de consulta.", url: "https://tecdigital.tec.ac.cr/dotlrn/classes/FI/FI1101/V-1-2024.CA.FI1101.1/file-storage/view/libro%2FCapitulo_08.pdf", icon: BookOpen },
             { text: "Estudiar el resumen de sesión 11.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-11%2Flectura_semana11.pdf", icon: FileText }
         ],
-        evaluaciones: []
+        evaluaciones: [
+            { text: "Práctica 11", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-11%2Fpractica_semana11.pdf", icon: Calculator },
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 10", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-11%2Fsolucion_practica_semana10.pdf", icon: Calculator }
+        ]
     },
     12: {
         id: 12, title: "Cinemática del movimiento rotacional",
@@ -292,6 +326,9 @@ export const weeksData: Record<number, WeekData> = {
         ],
         evaluaciones: [
             { text: "Práctica 12", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-12%2Fpractica_semana12.pdf", icon: Calculator }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 11", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-12%2Fsolucion_practica_semana11.pdf", icon: Calculator }
         ]
     },
     13: {
@@ -313,6 +350,9 @@ export const weeksData: Record<number, WeekData> = {
         ],
         evaluaciones: [
             { text: "Práctica 13", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-13%2Fpractica_semana13.pdf", icon: Calculator }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 12", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-13%2Fsolucion_practica_semana12.pdf", icon: Calculator }
         ]
     },
     14: {
@@ -333,7 +373,10 @@ export const weeksData: Record<number, WeekData> = {
         ],
         evaluaciones: [
             { text: "Práctica 14", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-14%2Fpractica_semana14.pdf", icon: Calculator },
-            { text: "Actividad formativa 9", url: "#", icon: FileText }
+            // { text: "Actividad formativa 9", url: "#", icon: FileText }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 13", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-14%2Fsolucion_practica_semana13.pdf", icon: Calculator }
         ]
     },
     15: {
@@ -355,6 +398,9 @@ export const weeksData: Record<number, WeekData> = {
         ],
         evaluaciones: [
             { text: "Práctica 14", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-15%2Fpractica_semana15.pdf", icon: Calculator }
+        ],
+        recursos: [
+            { text: "Solución Práctica Semana 14", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec/catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-15%2Fsolucion_practica_semana14.pdf", icon: Calculator }
         ]
     },
     16: {
@@ -374,6 +420,7 @@ export const weeksData: Record<number, WeekData> = {
             { text: "Revisar las secciones correspondientes del Capítulo 10 del libro principal de consulta.", url: "https://tecdigital.tec.ac.cr/dotlrn/classes/FI/FI1101/V-1-2024.CA.FI1101.1/file-storage/view/libro%2FCapitulo_10.pdf", icon: BookOpen },
             { text: "Estudiar el resumen de Semana 16.", url: "https://tecdigital.tec.ac.cr/dotlrn/catedras.tec.catedradefsicagenerali/file-storage/view/m-dulos-semanales%2Fsemana-16%2Flectura_semana16.pdf", icon: FileText }
         ],
-        evaluaciones: []
+        evaluaciones: [],
+        recursos: []
     }
 };
