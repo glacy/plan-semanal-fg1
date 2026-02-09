@@ -49,9 +49,9 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
               alt={`Ilustración de la unidad ${week.id}: ${week.title}`}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-3" aria-hidden="true">
+            {/*   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-3" aria-hidden="true">
               <span className="text-white text-xs font-bold uppercase tracking-widest">Unidad {week.id}</span>
-            </div>
+            </div> */}
           </div>
           <div className="flex-1 text-center md:text-left">
             <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3 ${currentStatus.color
@@ -108,7 +108,7 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${item.text} (abre enlace externo en nueva pestaña)`}
+                    aria-label={`Actividad: ${item.text} (abre enlace externo en nueva pestaña)`}
                     className={`flex items-center gap-3 p-4 rounded-xl transition-all border group ${isDarkMode
                       ? 'bg-white/5 border-white/5 hover:bg-white/10 text-blue-400'
                       : 'bg-gray-50 border-gray-100 hover:bg-blue-50 text-blue-600 shadow-sm'
@@ -138,7 +138,7 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Actividad: ${item.text}`}
+                    aria-label={`Actividad: ${item.text} (abre enlace externo en nueva pestaña)`}
                     className={`flex items-center gap-3 p-4 rounded-xl transition-all border group ${isDarkMode
                       ? 'bg-white/5 border-white/5 hover:bg-white/10 text-orange-400'
                       : 'bg-gray-50 border-gray-100 hover:bg-orange-50/50 text-orange-700 shadow-sm'
@@ -163,21 +163,23 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
         {/* Recursos Adicionales */}
         {week.recursos && week.recursos.length > 0 && (
           <Section title="Recursos complementarios" icon={ExternalLink} delay={0.5} isDarkMode={isDarkMode}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid gap-3 sm:grid-cols-2">
               {week.recursos.map((item, i) => (
                 <a
                   key={i}
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Recurso: ${item.text}`}
-                  className={`flex items-center gap-3 p-3 rounded-xl transition-all border group ${isDarkMode
-                    ? 'bg-white/5 border-white/5 hover:bg-white/10 text-slate-300'
-                    : 'bg-white border-gray-100 hover:border-blue-200 hover:bg-blue-50/30 text-slate-600'
+                  aria-label={`Recurso: ${item.text} (abre enlace externo en nueva pestaña)`}
+                  className={`flex items-center gap-3 p-4 rounded-xl transition-all border group ${isDarkMode
+                    ? 'bg-white/5 border-white/5 hover:bg-white/10 text-blue-400'
+                    : 'bg-gray-50 border-gray-100 hover:bg-blue-50 text-blue-600 shadow-sm'
                     }`}
                 >
-                  <item.icon className={`w-5 h-5 ${isDarkMode ? 'text-blue-500' : 'text-blue-600'}`} aria-hidden="true" />
-                  <span className="text-sm font-medium flex-1">
+                  <div className={`p-2 rounded-lg ${isDarkMode ? 'bg-blue-500/10' : 'bg-blue-100/50'}`} aria-hidden="true">
+                    <item.icon className="w-4 h-4" />
+                  </div>
+                  <span className="text-sm font-bold leading-snug flex-1">
                     {item.text}
                   </span>
                   <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
