@@ -2,9 +2,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
+import { viteSingleFile } from 'vite-plugin-singlefile';
+
+const isSingleMode = process.env.VITE_BUILD_MODE === 'single';
 
   export default defineConfig({
-    plugins: [react()],
+    plugins: [
+      react(),
+      ...(isSingleMode ? [viteSingleFile()] : [])
+    ],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {

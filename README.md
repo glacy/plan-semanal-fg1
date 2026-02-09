@@ -108,6 +108,53 @@ Toda la información del curso vive en `src/data/weeks.ts`. Ahí puedes editar:
 - URLs de las imágenes.
 - Listas de objetivos.
 
+### Build y Despliegue 🏗️
+
+Este proyecto soporta **dos modos de compilación** según tus necesidades:
+
+#### Modo Normal (Despliegue en Vercel)
+Genera una aplicación optimizada con múltiples archivos separados para mejor rendimiento en producción.
+
+```bash
+npm run build
+```
+
+**Salida:**
+```
+build/
+├── index.html (referencias a assets)
+└── assets/
+    ├── index-xxx.css
+    └── index-xxx.js
+```
+
+**Usar cuando:**
+- Desplegando en Vercel u otros hosting modernos
+- Necesitas optimización de carga y caching
+
+#### Modo Single File (Portátil)
+Genera un **único archivo HTML** con todo el código CSS y JavaScript inline. Ideal para distribución offline.
+
+```bash
+npm run build:single
+```
+
+**Salida:**
+```
+build/
+└── index.html (todo inline: CSS + JS en un solo archivo)
+```
+
+**Usar cuando:**
+- Necesitas una versión portátil para distribución USB/email
+- Requieres que la app funcione sin conexión a internet para assets externos
+- Compartiendo con usuarios sin hosting web
+
+**Cómo funciona:**
+- El plugin `vite-plugin-singlefile` se activa solo cuando `VITE_BUILD_MODE=single`
+- En Vercel, el script `build` se usa por defecto (modo normal)
+- No necesitas configuración adicional en `vercel.json`
+
 ¡Hazlo tuyo y ayuda a tus estudiantes a navegar mejor su aprendizaje!
 
 ---
