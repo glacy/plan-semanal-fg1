@@ -1,11 +1,13 @@
 import React from 'react';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface StatusBadgeProps {
   status: 'completed' | 'in-progress' | 'locked';
-  isDarkMode: boolean;
 }
 
-export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, isDarkMode }) => {
+export const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
+  const { isDarkMode } = useTheme();
+
   const statusConfig = {
     completed: {
       label: 'Semana Completada',

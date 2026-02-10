@@ -11,13 +11,12 @@ import { WeekNavigation } from './WeekNavigation';
 
 interface WeekContentProps {
   week: WeekData;
-  isDarkMode: boolean;
   totalWeeks: number;
   onNavigate: (week: number) => void;
   maxCurrentWeek: number;
 }
 
-export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, totalWeeks, onNavigate, maxCurrentWeek }) => {
+export const WeekContent: React.FC<WeekContentProps> = ({ week, totalWeeks, onNavigate, maxCurrentWeek }) => {
   return (
     <div className="flex-1 w-full mx-auto pb-20" role="main">
       <motion.div
@@ -26,22 +25,22 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <WeekHeader week={week} isDarkMode={isDarkMode} />
+        <WeekHeader week={week} />
 
-        <Section title="Objetivos de aprendizaje" icon={Target} delay={0.1} isDarkMode={isDarkMode}>
-          <ObjectivesList objectives={week.objetivos} isDarkMode={isDarkMode} />
+        <Section title="Objetivos de aprendizaje" icon={Target} delay={0.1}>
+          <ObjectivesList objectives={week.objetivos} />
         </Section>
 
-        <Section title="Contenidos" icon={List} delay={0.2} isDarkMode={isDarkMode}>
-          <ContentList contents={week.contenidos} isDarkMode={isDarkMode} />
+        <Section title="Contenidos" icon={List} delay={0.2}>
+          <ContentList contents={week.contenidos} />
         </Section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Section title="Materiales" icon={ClipboardCheck} delay={0.3} isDarkMode={isDarkMode}>
+          <Section title="Materiales" icon={ClipboardCheck} delay={0.3}>
             <div className="grid gap-3">
               {week.consignas.length > 0 ? (
                 week.consignas.map((item, i) => (
-                  <LinkCard key={i} text={item.text} url={item.url} icon={item.icon} isDarkMode={isDarkMode} />
+                  <LinkCard key={i} text={item.text} url={item.url} icon={item.icon} />
                 ))
               ) : (
                 <p className="text-slate-500 italic text-sm text-center py-4">Sin materiales asignados</p>
@@ -49,11 +48,11 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
             </div>
           </Section>
 
-          <Section title="Actividades" icon={PencilRuler} delay={0.4} isDarkMode={isDarkMode}>
+          <Section title="Actividades" icon={PencilRuler} delay={0.4}>
             <div className="grid gap-3">
               {week.evaluaciones.length > 0 ? (
                 week.evaluaciones.map((item, i) => (
-                  <LinkCard key={i} text={item.text} url={item.url} icon={item.icon} isDarkMode={isDarkMode} variant="evaluation" />
+                  <LinkCard key={i} text={item.text} url={item.url} icon={item.icon} variant="evaluation" />
                 ))
               ) : (
                 <p className="text-slate-500 italic text-sm text-center py-4">Sin evaluaciones pendientes</p>
@@ -63,10 +62,10 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
         </div>
 
         {week.recursos && week.recursos.length > 0 && (
-          <Section title="Recursos complementarios" icon={ExternalLink} delay={0.5} isDarkMode={isDarkMode}>
+          <Section title="Recursos complementarios" icon={ExternalLink} delay={0.5}>
             <div className="grid gap-3 sm:grid-cols-2">
               {week.recursos.map((item, i) => (
-                <LinkCard key={i} text={item.text} url={item.url} icon={item.icon} isDarkMode={isDarkMode} />
+                <LinkCard key={i} text={item.text} url={item.url} icon={item.icon} />
               ))}
             </div>
           </Section>
@@ -77,7 +76,6 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, isDarkMode, tota
           totalWeeks={totalWeeks}
           maxCurrentWeek={maxCurrentWeek}
           onNavigate={onNavigate}
-          isDarkMode={isDarkMode}
         />
       </motion.div>
     </div>

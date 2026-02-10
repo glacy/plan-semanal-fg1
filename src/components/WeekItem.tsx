@@ -2,6 +2,7 @@ import React from 'react';
 import { WeekData } from '../data/weeks';
 import { CheckCircle, Lock, Pin } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface WeekItemProps {
   week: number;
@@ -10,7 +11,6 @@ interface WeekItemProps {
   isPast: boolean;
   isInProgress: boolean;
   isLocked: boolean;
-  isDarkMode: boolean;
   totalWeeks: number;
   onSelect: (week: number) => void;
 }
@@ -22,10 +22,10 @@ export const WeekItem: React.FC<WeekItemProps> = ({
   isPast,
   isInProgress,
   isLocked,
-  isDarkMode,
   totalWeeks,
   onSelect
 }) => {
+  const { isDarkMode } = useTheme();
   const showCurrentBadge = isInProgress;
   const nextWeekIsLocked = week + 1 > 16;
 

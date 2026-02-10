@@ -2,12 +2,12 @@ import React from 'react';
 import { Calendar, ChevronDown, X } from 'lucide-react';
 import { WeekItem } from './WeekItem';
 import { motion } from 'motion/react';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface WeekTimelineProps {
   currentWeek: number;
   totalWeeks: number;
   maxCurrentWeek: number;
-  isDarkMode: boolean;
   isOpen: boolean;
   isDesktop: boolean;
   weeksData: any;
@@ -19,13 +19,13 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
   currentWeek,
   totalWeeks,
   maxCurrentWeek,
-  isDarkMode,
   isOpen,
   isDesktop,
   weeksData,
   onSelect,
   onToggle
 }) => {
+  const { isDarkMode } = useTheme();
   const weeks = Array.from({ length: totalWeeks }, (_, i) => i + 1);
   const activeWeekData = weeksData[currentWeek];
 
@@ -99,7 +99,6 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
                   isInProgress={isInProgress}
                   isLocked={isLocked}
                   isDesktop={isDesktop}
-                  isDarkMode={isDarkMode}
                   totalWeeks={totalWeeks}
                   onSelect={onSelect}
                 />

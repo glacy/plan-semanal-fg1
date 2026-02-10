@@ -7,11 +7,10 @@ interface SidebarProps {
   currentWeek: number;
   onSelectWeek: (week: number) => void;
   totalWeeks: number;
-  isDarkMode: boolean;
   maxCurrentWeek: number;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, totalWeeks, isDarkMode, maxCurrentWeek }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, totalWeeks, maxCurrentWeek }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -43,7 +42,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
           currentWeek={currentWeek}
           totalWeeks={totalWeeks}
           maxCurrentWeek={maxCurrentWeek}
-          isDarkMode={isDarkMode}
           isOpen={isOpen}
           isDesktop={isDesktop}
           weeksData={weeksData}

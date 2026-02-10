@@ -1,13 +1,14 @@
 import React from 'react';
 import { WeekData } from '../data/weeks';
 import { StatusBadge } from './StatusBadge';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface WeekHeaderProps {
   week: WeekData;
-  isDarkMode: boolean;
 }
 
-export const WeekHeader: React.FC<WeekHeaderProps> = ({ week, isDarkMode }) => {
+export const WeekHeader: React.FC<WeekHeaderProps> = ({ week }) => {
+  const { isDarkMode } = useTheme();
   const weekStatus = week.id < 16 ? 'completed' : week.id === 16 ? 'in-progress' : 'locked';
 
   return (
@@ -20,7 +21,7 @@ export const WeekHeader: React.FC<WeekHeaderProps> = ({ week, isDarkMode }) => {
         />
       </div>
       <div className="flex-1 text-center md:text-left">
-        <StatusBadge status={weekStatus} isDarkMode={isDarkMode} />
+        <StatusBadge status={weekStatus} />
         <h2 className={`text-2xl sm:text-3xl font-extrabold tracking-tight uppercase leading-tight mb-4 mt-3 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>
           {week.title}
         </h2>

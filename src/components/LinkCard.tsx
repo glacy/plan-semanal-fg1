@@ -1,15 +1,17 @@
 import React from 'react';
 import { LucideIcon, ExternalLink } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface LinkCardProps {
   text: string;
   url: string;
   icon: LucideIcon;
-  isDarkMode: boolean;
   variant?: 'default' | 'evaluation';
 }
 
-export const LinkCard: React.FC<LinkCardProps> = ({ text, url, icon: Icon, isDarkMode, variant = 'default' }) => {
+export const LinkCard: React.FC<LinkCardProps> = ({ text, url, icon: Icon, variant = 'default' }) => {
+  const { isDarkMode } = useTheme();
+
   const getStyles = () => {
     if (variant === 'evaluation') {
       return {

@@ -1,15 +1,16 @@
 import React, { ReactNode } from 'react';
 import { motion } from 'motion/react';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface SectionProps {
   title: string;
   icon: React.ElementType;
   children: ReactNode;
   delay?: number;
-  isDarkMode: boolean;
 }
 
-export const Section: React.FC<SectionProps> = ({ title, icon: Icon, children, delay = 0, isDarkMode }) => {
+export const Section: React.FC<SectionProps> = ({ title, icon: Icon, children, delay = 0 }) => {
+  const { isDarkMode } = useTheme();
   const sectionId = title.toLowerCase().replace(/\s+/g, '-');
   
   return (

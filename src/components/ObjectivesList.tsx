@@ -1,12 +1,14 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface ObjectivesListProps {
   objectives: string[];
-  isDarkMode: boolean;
 }
 
-export const ObjectivesList: React.FC<ObjectivesListProps> = ({ objectives, isDarkMode }) => {
+export const ObjectivesList: React.FC<ObjectivesListProps> = ({ objectives }) => {
+  const { isDarkMode } = useTheme();
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
       {objectives.map((obj, i) => (

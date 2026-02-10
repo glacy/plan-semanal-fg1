@@ -1,11 +1,13 @@
 import React from 'react';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface ContentListProps {
   contents: string[];
-  isDarkMode: boolean;
 }
 
-export const ContentList: React.FC<ContentListProps> = ({ contents, isDarkMode }) => {
+export const ContentList: React.FC<ContentListProps> = ({ contents }) => {
+  const { isDarkMode } = useTheme();
+
   return (
     <div className="space-y-4">
       {contents.map((cont, i) => (

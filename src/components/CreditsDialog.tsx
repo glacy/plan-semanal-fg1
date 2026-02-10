@@ -10,93 +10,13 @@ import {
   DialogTrigger,
 } from './ui/dialog';
 import { Info } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
+import { creditsData } from '../data/credits';
+import { CONFIG } from '../config/app';
 
-interface CreditsDialogProps {
-  isDarkMode: boolean;
-}
+export const CreditsDialog: React.FC = () => {
+  const { isDarkMode } = useTheme();
 
-const creditsData = [
-  {
-    category: 'UI Framework',
-    items: [
-      {
-        name: 'shadcn/ui',
-        license: 'MIT',
-        url: 'https://ui.shadcn.com/',
-        description: 'Componentes de UI reutilizables construidos con Radix UI y Tailwind CSS',
-      },
-    ],
-  },
-  {
-    category: 'Componentes UI',
-    items: [
-      {
-        name: 'Radix UI',
-        license: 'MIT',
-        url: 'https://www.radix-ui.com/primitives/docs/overview/introduction',
-        description: 'Componentes primitives accesibles (accordion, dialog, dropdown, tabs, tooltip, avatar, checkbox, popover, scroll-area, alert-dialog)',
-      },
-    ],
-  },
-  {
-    category: 'Iconos',
-    items: [
-      {
-        name: 'Lucide React',
-        license: 'ISC',
-        url: 'https://lucide.dev',
-        description: 'Biblioteca de iconos',
-      },
-    ],
-  },
-  {
-    category: 'Estilos y Utilidades',
-    items: [
-      {
-        name: 'Tailwind CSS',
-        license: 'MIT',
-        url: 'https://tailwindcss.com',
-        description: 'Framework de utilidades CSS',
-      },
-      {
-        name: 'Motion (Framer Motion)',
-        license: 'MIT',
-        url: 'https://motion.dev',
-        description: 'Biblioteca de animaciones',
-      },
-    ],
-  },
-  {
-    category: 'Recursos',
-    items: [
-      {
-        name: 'Unsplash',
-        license: 'Unsplash License',
-        url: 'https://unsplash.com/license',
-        description: 'Imágenes',
-      },
-    ],
-  },
-  {
-    category: 'Core',
-    items: [
-      {
-        name: 'React',
-        license: 'MIT',
-        url: 'https://react.dev',
-        description: 'Framework UI',
-      },
-      {
-        name: 'Vite',
-        license: 'MIT',
-        url: 'https://vitejs.dev',
-        description: 'Build tool',
-      },
-    ],
-  },
-];
-
-export const CreditsDialog: React.FC<CreditsDialogProps> = ({ isDarkMode }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -174,7 +94,7 @@ export const CreditsDialog: React.FC<CreditsDialogProps> = ({ isDarkMode }) => {
           className={`mt-6 pt-6 border-t text-sm ${isDarkMode ? 'border-white/10 text-slate-500' : 'border-gray-200 text-gray-500'}`}
         >
           <p>
-            Este proyecto es © 2026 Cátedra de Física General I - Tecnológico de Costa Rica.
+            Este proyecto es © 2026 Cátedra de {CONFIG.course.name} - {CONFIG.course.institution}.
           </p>
           <p className="mt-2">
             Los proyectos de código abierto mencionados anteriormente son propiedad de sus respectivos autores y se utilizan bajo sus licencias correspondientes.

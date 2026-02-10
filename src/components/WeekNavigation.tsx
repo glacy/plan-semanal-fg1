@@ -1,15 +1,17 @@
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface WeekNavigationProps {
   currentWeek: number;
   totalWeeks: number;
   maxCurrentWeek: number;
   onNavigate: (week: number) => void;
-  isDarkMode: boolean;
 }
 
-export const WeekNavigation: React.FC<WeekNavigationProps> = ({ currentWeek, totalWeeks, maxCurrentWeek, onNavigate, isDarkMode }) => {
+export const WeekNavigation: React.FC<WeekNavigationProps> = ({ currentWeek, totalWeeks, maxCurrentWeek, onNavigate }) => {
+  const { isDarkMode } = useTheme();
+
   return (
     <nav className="mt-12 flex justify-between items-center gap-4" aria-label="Navegación entre semanas">
       <button
